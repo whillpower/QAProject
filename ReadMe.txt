@@ -2,13 +2,15 @@ README
 
 wgreen’s QA Project
 
-Running the test - The MacBook I have from RV doesn’t give me root user access, so Nightwatch had to be installed locally.  As such, you’ll need to start in the bin folder of the project to use the Nightwatch runner, then use the node night watch command with the -t option to run just the DTVSpecials_test1 file.
+Running the test - The MacBook I have from RV doesn’t give me root user access, so Nightwatch had to be installed locally.  As such, you’ll need to start in the bin folder of the project to use the Nightwatch runner, then use the node nightwatch command with the -t option to run just the DTVSpecials_test1 file.
 
 	>cd ./wgreenQAproject/bin
 
 	>node nightwatch -t ../test/DTVSpecials_test1.js
 
-The project contains the entire Nightwatch installation and the Selenium jar file.  The config is set up to start the selenium server automatically when the test runs.
+This assumes you have Nightwatch installed globally on your machine.  If you don't, you can install it locally within your project folder.
+
+The config is set up to start the selenium server automatically when the test runs.
 
 This is a quick test that ensures key components of the www.directspecials.com home page are visible and functional.  There are 11 tests contained within it:
 
@@ -34,7 +36,7 @@ Contact Form
 STRATEGY
 I went with simple tests, since this is the first time I’ve written a unit test, let alone used Nightwatch or Selenium.  Without access to the variables governing which DNIS, promo code, and price point are displayed, I’m not able to generate a dynamic test to compare an expected result with the actual value.
 
-Additional tests could be written to ensure links redirect properly, I’m working on those as well as exploring some other features of the API.  I’m also building out Firefox and Explorer versions of the test.  The project folder probably contains extraneous tests and files - a reflection of my first foray into Nightwatch.
+Additional tests could be written to ensure links redirect properly, I’m working on those as well as exploring some other features of the API.  I’m also building out Firefox and Explorer versions of the test.
 
 The key metrics on the site that need to be there and accurate are going to be:
 DNIS - is it one of ours and is it displayed?  If it’s not our number or it’s not populating, how would RV make money?
@@ -44,6 +46,4 @@ Promo code - I assume this is tied to halo data and would typically signify an i
 Pricing - a big selling point, the most common reason a person browses the site.  This needs to be right.
 
 Legal - gotta have those restrictions
-
-Customer Service DNIS - should not be ours.
 
